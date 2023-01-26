@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .center {
+            position: fixed;
+            width: 300px;
+            height: 250px;
+            left: 50%;
+            top: 50%;
+            /* margin-left: -150px;
+            margin-top: -250px; */
+            background-color: azure;
+            border-radius: 10%;
+        }
+
+        .button {
+            position: absolute;
+            bottom: 8px;
+            right: 5px;
+        }
+
+        .a {
+            display: flex;
+            flex-direction: column;
+            width: 65px;
+            height: 18px;
+        }
+
+        .span {
+            line-height: 26px;
+            text-align: center;
+            width: 100px;
+            font-size: larger;
+            flex: 1;
+            color: red;
+            background-color: rgb(0, 0, 0);
+        }
+
+        .img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div>
+        <span>How are you?</span>
+        <!-- i'm good! -->
+    </div>
+
+    <!-- <base href="" target="_blank"> -->
+
+
+
+
+
+
+
+
+    <a href=""></a>
+
+    <script>
+
+        var body = document.getElementsByTagName('body');
+        var cc = document.createElement('div');
+        console.log(cc)
+
+        cc.innerHTML = `<dl>
+            <dt> <span>网站url</span></dt>
+                <dd><input type="url" name="HypeLink" placeholder="填写你要跳转到的网站的链接" title="找到你要跳转的网址,复制上方链接到这里"></dd>
+
+                <dt><span>快捷导航名称</span></dt>
+                <dd><input type="text" name="LinkName" placeholder="网页显示文字"></dd>
+
+                <dt><span>提示</span></dt>
+                <dd><input type="text" name="Title" placeholder="鼠标悬浮时提示文字"></dd>
+
+                <!-- <dt> <span>图片url</span></dt>
+                <dd><input type="url" name="ImgName" placeholder="图片链接"></dd> -->
+            </dl >
+            <di class="button">
+                <input type="button" value="取消">
+                    <input type="button" value="确定">
+                    </di>`
+
+        // setInterval(function () {
+        //     document.body.appendChild(cc)
+
+        // }, 5000)
+        // center()
+        var Text = document.querySelector('div');
+        // console.log(cc)
+        // console.log(document.getElementsByClassName('center').firstElementChild.innerHTML)
+        var span = document.createElement('span')
+        // Text.appendChild(cc)
+        var root = document.body.innerHTML;
+        var bu = document.querySelector('section')
+        center(bu)
+        function center(tar) {
+            let i = window.getComputedStyle(tar).width;
+            let h = window.getComputedStyle(tar).height;
+            tar.style.marginLeft = -parseFloat(i) / 2 + 'px';
+            tar.style.marginTop = -parseFloat(h) / 2 + 'px';
+        }
+
+
+        var button = document.querySelector('section di');
+        console.log(button);
+        var but1 = button.firstElementChild
+        var but2 = button.lastElementChild
+        but1.addEventListener('click', function () {
+            console.log(1)
+            // let node = Text.lastElementChild
+            Text.removeChild(Text.lastElementChild)
+
+        })
+        but2.addEventListener('click', function () {
+            let HypeLink = document.getElementsByName('HypeLink')[0].value;
+            let Title = document.getElementsByName('Title')[0].value;
+            let LinkName = document.getElementsByName('LinkName')[0].value;
+            let li = document.createElement('li')
+            let a = document.createElement('a')
+            let span = document.createElement('span')
+            // let ImgName = document.getElementsByName('ImgName')[0].value;
+            // let img = document.createElement('img')
+            // img.setAttribute('src', `${ImgName}`)
+            // img.classList.add('img')
+            // a.appendChild(img)
+
+            a.setAttribute('href', `${HypeLink}`)
+            a.setAttribute('title', `${Title}`)
+            a.setAttribute('target', `${Title}`)
+            a.classList.add('a')
+            span.innerText = LinkName
+            span.classList.add('span')
+            a.appendChild(span)
+            li.appendChild(a)
+            Text.appendChild(li)
+
+        })
+
+
+
+        // Text.addEventListener('click', function () {
+        //     var PageNode = document.querySelector('#box>div') //获取页面节点
+        //     var UL = document.createElement("ul") //创建一个ul标签
+        //     var li = document.createElement('li') //创建一个li标签
+        //     //li标签创建一个文本节点
+        //     li.appendChild(document.createTextNode('我是一个文本')) //方式一
+        //     // li.innerText = '我是一个文本' //方式二
+        //     UL.appendChild(li);  //将li标签追加到ul标签
+        //     PageNode.parentNode.appendChild(UL) //将组合好的标签加入到页面中
+
+        // })
+
+        // Text.innerText = '<p>你好</p>'
+    </script>
+
+
+</body>
+
+</html>

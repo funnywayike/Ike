@@ -1,0 +1,114 @@
+#Form input[type='text'] {
+    box-sizing: border-box;
+    padding: 0 10px;
+    font-size: 20px;
+    outline: 0;
+}
+
+#Form input[type='submit']:hover {
+    transform: scale(1.2);
+}
+
+#Form input::placeholder {
+    font-size: 20px;
+}
+
+#Form {
+    margin: 0 auto;
+    background-color: rgb(20, 19, 19);
+    position: relative;
+
+    width: 100%;
+    height: 300px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    /* align-content: flex-end; */
+
+}
+
+#Set>span {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(28, 27, 25, 0.0);
+    text-align: center;
+    line-height: 60px;
+    background-repeat: no-repeat;
+    background-size: 40px 40px;
+    background-position: center;
+}
+
+#Sets {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+
+}
+
+#Set {
+    display: flex;
+    justify-content: center;
+}
+
+#Sets>div {
+    width: auto;
+
+    height: 100%;
+    line-height: 100%;
+    color: antiquewhite;
+    text-align: center;
+    background-color: rgba(181, 187, 164, 0.0);
+    font-weight: 900;
+    padding: 5px 10px;
+    overflow-y: hidden;
+    /* overflow-x: auto; */
+}
+
+.sub {
+    width: 60px;
+    background: url(../img/png/搜索1.png);
+    background-size: cover;
+    height: 60px;
+    background-color: rgba(116, 204, 23, 0.0);
+    border: 0;
+    /* margin-left: 10px; */
+    position: relative;
+    left: 10px;
+}
+
+.baidu {
+    background-color: azure;
+    /* font-size: 30px; */
+}
+
+.zhihu {
+    background-color: azure;
+    /* font-size: 10px; */
+}
+
+.bilibili {
+    background-color: azure;
+}
+
+.Bing {
+    background-color: azure;
+}
+
+.Google {
+    background-color: azure;
+}
+
+.WJ {
+    background-color: azure;
+}
+
+.juejin {
+    background-color: azure;
+}
+
+.GH {
+    background-color: azure;
+}

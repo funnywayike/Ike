@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+    <title>Meta导航</title>
+    <link rel="stylesheet" href="./CSS/global.css">
+    <link rel="stylesheet" href="./CSS/QuickNavigation.css">
+    <link rel="stylesheet" href="./CSS/SearchBox.css">
+    <link rel="stylesheet" href="./CSS/detail.css">
+
+    <!-- <link rel="stylesheet" href="./JS/detail.js">
+    <link rel="stylesheet" href="./JS/research.js">
+    <link rel="stylesheet" href="./JS/Navigation.js"> -->
+
+    <style>
+        li {
+            overflow: auto;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+        }
+
+        #leader_ul>li {
+            width: auto;
+        }
+
+        a {
+            text-decoration: none;
+            color: rgb(231, 234, 223);
+            background-color: rgb(51, 61, 58);
+            border-radius: 20%;
+            border: 0;
+        }
+
+        a:hover {
+            color: rgb(255, 5, 5);
+            font-weight: 900;
+        }
+
+        .card {
+            backdrop-filter: blur(10px) saturate(196%);
+            -webkit-backdrop-filter: blur(10px) saturate(196%);
+            background-color: rgba(237, 230, 230, 0.39);
+            border-radius: 12px;
+            border: 1px solid rgba(209, 213, 219, 0.3);
+        }
+
+        input {
+            outline: 0;
+        }
+
+        #info_box2>div {
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            /* background-color: aquamarine; */
+            /* width: 300px; */
+
+        }
+
+        #info_box1>div {
+            display: inline-block;
+            position: absolute;
+            left: 20%;
+            /* top: 2%;
+            left: 20%; */
+
+        }
+
+        dl input {
+            margin-left: 20px;
+            padding-left: 10px;
+            width: 200px;
+        }
+
+        #info_box2 input[type='text'] {
+            margin-right: 10px;
+            /* background-color: rgb(255, 0, 89); */
+        }
+
+        #info_box1 input[type='text'] {
+            margin-right: 10px;
+            /* background-color: rgb(255, 0, 89); */
+
+        }
+
+        /* Background styles */
+
+
+        /* Glassmorphism card effect */
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- 隐藏块 -->
+    <section id="Menu" draggable="false">
+        <span style="color: rgb(211, 31, 31);"></span>
+        <img draggable="false" src="./img/png/liebiao.png" width="50px" height:50px; alt="Menu">
+    </section>
+    <!-- 绝对定位找位置,定权重 -->
+
+    <div class="scale">
+
+        <!-- 绝对位置去最右边 -->
+        <div id="Setting">
+
+            <!-- 下面节点默认位置在设备右上角 -->
+            <div id="Menu_ori" class="display_none">
+                <img src="./img/cute_image/1.jpg" width="100%" height="200px"
+                    style="position: absolute;left: -20px;top: 20px;" alt="">
+                <div style="max-height: 500px;overflow: auto;"> </div>
+                <div style="height: 300px;"> </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- 隐藏块 -->
+    <!-- 搜索块 -->
+    <section>
+        <!-- 搜索 -->
+        <!-- 搜索框 -->
+        <div>
+            <form id="Form" action="http://www.zhihu.com/search?" target="_self">
+
+
+                <div id="Set" class="">
+                    <span style="background-image: url(./img/icon_frgyqursaiu/baidu.svg);"> </span>
+
+                    <input type="text" id="Content" name="q" text="搜索" class="baidu">
+
+                    <input for="Form" type="submit" class="sub" value="">
+                </div>
+
+                <div id="Sets">
+                    <div id="baidu">百度</div>
+                    <div id="zhihu">知乎</div>
+                    <div id="bilibili">哔哩哔哩</div>
+                    <div id="Bing">Bing</div>
+                    <div id="Google">谷歌</div>
+                    <div id="WJ">维基百科</div>
+                    <div id="GH">GitHub</div>
+                    <div id="juejin">稀土掘金</div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- 快捷导航块 -->
+    <section id="leader">
+        <ul id="leader_ul" class=" pos_re list_item0 list_item1 list_font box"
+            style="width: 100%;justify-content:flex-start;display: flex;margin-top: 1px;">
+            <li>常用导航你怎么看
+                <ul class="display_hidden ori_position list_item0 list_item1 list_font">
+                </ul>
+            </li>
+
+            <li>影视
+                <ul class="display_hidden ori_position list_item0 list_item1 list_font">
+                </ul>
+            </li>
+
+            <li> 办公
+                <ul class="display_hidden ori_position list_item0 list_item1 list_font">
+
+
+                </ul>
+            </li>
+
+        </ul>
+    </section>
+
+
+
+
+    <script>
+        console.log('')
+        const Menu = document.getElementById('Menu');
+        const Menu_ori = document.getElementById('Menu_ori');
+
+
+        const Me = document.getElementById('Setting').parentNode;
+
+
+        const leader = document.getElementById("leader");
+
+        let lea = document.querySelectorAll("#leader>ul>li");
+
+        let ser = document.getElementById('Set');
+        let s = document.querySelector("#Set > input[type ='text']")
+        const set = document.getElementById("Sets")
+        const Form = document.getElementById("Form")
+
+        let img = document.querySelector('#Set>span');
+        var aaa = document.querySelector('#leader_ul>li>ul>li>a');
+        let choice_button
+        let button_class = 0;
+
+
+        // ↓右键选择
+        leader.addEventListener('contextmenu', function (target) {
+            let x = target.clientX;
+            let y = target.clientY;
+            console.log(x, y, target)
+
+            target.preventDefault ? target.preventDefault() : target.returnValue = false
+            var target = target || Window.event;
+            var target = target.target || target.srcElement;
+
+            // console.log('搜索' - target.offsetX, target.offsetY)
+            let Navi_level1 = document.querySelectorAll('#leader_ul>li')
+
+            let Navi_level2 = document.querySelectorAll('#leader_ul>li>ul>li')
+
+
+            // 一级快捷导航栏
+            for (let i = 0; i < Navi_level1.length - 1; i++) {
+                // 锁定要处理的目标
+                if (Navi_level1[i] === target) {
+                    create_choice(x, y)
+                    let choice_button = get_choice_node()
+                    // console.log(choice_button)
+                    choice_button[0].onclick = function () {
+                        // console.log('编辑', target.childNodes)
+                        create_ul_1(target, x, y)
+                        choice_button = get_choice_node()
+                        // console.log(choice_button)
+
+                        choice_button[0].onclick = function () {
+                            clear_node()
+                        }
+                        choice_button[1].onclick = function () {
+                            let Menu_name = document.getElementsByName('Menu_name')[0].value
+                            let remake = document.getElementsByName('remake')[0].value
+                            target.removeChild(target.firstChild)
+                            // console.log(target.firstChild)
+                            target.insertAdjacentText('afterbegin', Menu_name)
+                            target.setAttribute('title', `${remake}`)
+                            clear_node()
+                            // target.replaceChild(Menu_name, target.childNodes[0])
+                            // target.insertAdjacentText('afterbegin', 你好)
+                            // console.log(Menu_name, remake)
+                        }
+
+                    }
+                    choice_button[1].ondblclick = function () {
+                        target.parentNode.removeChild(target)
+                        clear_node()
+
+                    }
+                }
+            }
+
+            // 二级快捷导航栏
+            for (i of Navi_level2) {
+                if (i === target.parentNode && !i.classList.contains('flag')) {
+                    create_choice(x, y)
+                    let choice_button = get_choice_node()
+                    // console.log(choice_button)
+
+                    //编辑↓
+                    choice_button[0].onclick = function () {
+                        // console.log('编辑', target.childNodes)
+                        create_ul_2(target, x, y)
+                        choice_button = get_choice_node()
+                        // console.log(choice_button)
+
+                        choice_button[0].onclick = function () {
+                            clear_node()
+                        }
+                        choice_button[1].onclick = function () {
+                            let HypeLink = document.getElementsByName('HypeLink')[0].value;
+                            let Title = document.getElementsByName('Title')[0].value;
+                            let LinkName = document.getElementsByName('LinkName')[0].value;
+                            // console.log(target)
+                            target.setAttribute('href', `${HypeLink}`)
+                            target.setAttribute('title', `${Title}`)
+                            target.innerText = `${LinkName}`
+                            clear_node()
+
+
+                            // target.childElementNodes[0].setAttribute('href',`${HypeLink}`)
+                            // console.log(target.firstChild)
+                            // target.replaceChild(Menu_name, target.childNodes[0])
+                            // target.insertAdjacentText('afterbegin', 你好)
+                            // console.log(Menu_name, remake)
+                        }
+
+                    }
+                    //↑编辑节点
+                    //↓删除
+                    choice_button[1].ondblclick = function () {
+                        target.parentNode.removeChild(target)
+                        clear_node()
+
+                    }
+                    //↑删除
+
+
+                }
+            }
+
+        })
+        //↑右键选择
+
+
+
+        leader.addEventListener('click', function (tar) {
+            clear_node()
+        })
+
+
+        function clear_node() {
+            let target = document.querySelectorAll('figure div[class=\'card\']')
+            for (i of target) {
+                if (i) document.body.removeChild(i.parentNode)
+            }
+        }
+
+        function get_choice_node() {
+            let choice_button = document.querySelectorAll('figure>div[class=\'card\']>div>input[type=\'button\']');
+            // console.log('获取button函数', choice_button)
+            return choice_button
+        }
+        function create_choice(x, y) {
+            clear_node()
+            let fig = document.createElement('figure');
+            fig.innerHTML = `<div class="card">
+            <div>
+                <input type="button" value="编辑" style="width:100%;">
+                <input type="button" value="删除" style='width:100%' title='双击删除'>
+            </div>
+        </div>`
+            fig.setAttribute('style', `position:absolute;left:${x}px;top:${y}px;width:100px;height:auto;`)
+            document.body.appendChild(fig)
+
+
+        }
+        function create_ul_1(target, x, y) {
+            clear_node()
+
+            // 创造信息输入节点
+            let figure = document.createElement('figure')
+            figure.setAttribute('style', `position:absolute;left:${x}px;top:${y}px;width:100px;height:auto;`)
+            figure.setAttribute('id', 'info_box1')
+            figure.innerHTML = `<div class="card">
+                <dl>
+                <dt>菜单名</dt>
+                <dd><input type="text" placeholder="长度不建议大于6" name="Menu_name"></dd>
+                <dt>备注</dt>
+                <dd><input type="text" name="remake" placeholder="任意描述该菜单的内容"></dd>
+
+                   </dl>
+
+                <div style="text-align:right;margin-bottom: 5px;position: relative;right: 5px;">
+                <input type="button" value="取消">
+                <input type="button" value="确认">
+                </div>
+        </div>`
+            document.body.appendChild(figure)
+        }
+        function create_ul_2(target, x, y) {
+            clear_node()
+            let figure = document.createElement('figure')
+            figure.setAttribute('style', `position:absolute;left:${x}px;top:${y}px;width:100px;height:auto;`)
+            figure.setAttribute('id', 'info_box2')
+            figure.innerHTML = `<div class="card">
+            <dl>
+                <dt><span>网站url</span></dt>
+                <dd><input type="url" name="HypeLink" placeholder="填写你要跳转到的网站的链接" title="找到你要跳转的网址,复制上方链接到这里"></dd>
+
+                <dt><span>快捷导航名称</span></dt>
+                <dd><input type="text" name="LinkName" placeholder="网页显示文字"></dd>
+
+                <dt><span>提示</span></dt>
+                <dd><input type="text" name="Title" placeholder="鼠标悬浮时提示文字"></dd>
+
+                <!-- <dt> <span>图片url</span></dt>
+                <dd><input type="url" name="ImgName" placeholder="图片链接"></dd> -->
+            </dl>
+            <div style="text-align:right;margin-bottom: 5px;position: relative;right: 5px;">
+                <input type="button" value="取消">
+                <input type="button" value="确认">
+            </div>
+        </div>`
+            let t = getElementAbsPos(target);
+            // let t = target.clientY;     
+            // fig.setAttribute('style', `position:absolute; left:${t.left + 68}px; top:${t.top + 20}px`);
+            document.body.appendChild(figure)
+
+        }
+
+
+
+
+
+
+        //点击+号增加快捷页面或者导航 
+        leader.addEventListener('dblclick', function (tar) {
+            let bu = document.querySelectorAll('figure>div[class=\'card\']')
+            // console.log(bu)
+            for (i of bu) {
+                if (i) {
+                    document.body.removeChild(i.parentNode)
+                }
+            }
+
+            var tar = tar || window.event;
+            var target = tar.target || tar.srcElement;
+            // console.log("源点击目标:" + target.innerHTML)
+
+
+
+            if (target.classList.contains('flag')) {
+
+                if (target.parentNode.classList.contains('pos_re')) {
+                    // document.body.removeChild(document.querySelector('#info_box1'))
+                    // document.body.removeChild(document.querySelector('#info_box2'))
+
+                    let fig = document.createElement('figure')
+
+                    fig.setAttribute('id', 'info_box1')
+                    fig.innerHTML = `<div class="card">
+            <dl>
+                <dt>菜单名</dt>
+                <dd><input type="text" placeholder="长度不建议大于6" name="Menu_name"></dd>
+                <dt>备注</dt>
+                <dd><input type="text" name="remake" placeholder="任意描述该菜单的内容"></dd>
+
+            </dl>
+
+            <div style="text-align:right;margin-bottom: 5px;position: relative;right: 5px;">
+                <input type="button" value="取消">
+                <input type="button" value="确认">
+            </div>
+        </div>`
+                    let t = getElementAbsPos(target);
+                    fig.setAttribute('style', `position:absolute; left:${t.left + 68}px; top:${t.top + 20}px`);
+                    document.body.appendChild(fig)
+                    let button = document.querySelectorAll('figure div[class=\'card\'] input[type=\'button\']');
+                    while (1) {
+                        let k = 1
+                        a = button[0].onclick = function () {
+                            document.body.removeChild(button[0].parentNode.parentNode.parentNode)
+                            k = 2
+                        }
+                        a = button[1].onclick = function () {
+                            let new_node = document.createElement('li')
+                            let Menu_name = document.getElementsByName('Menu_name')[0].value
+                            let remake = document.getElementsByName('remake')[0].value
+                            let span = document.createElement('span')
+                            let li = document.createElement('li')
+                            li.setAttribute('title', `${remake}`)
+                            // span.innerText = Menu_name;
+                            li.innerText = Menu_name;
+                            let ul = document.createElement('ul')
+                            ul.classList.add('display_hidden', 'ori_position', 'list_item0', 'list_item1', 'list_font')
+                            var lii = document.createElement('li')
+
+                            lii.innerText = '+'
+                            lii.setAttribute('class', 'flag');
+
+                            ul.appendChild(lii)
+                            li.appendChild(ul)
+                            target.parentNode.insertBefore(li, target)
+                            document.body.removeChild(document.querySelector('#info_box1'))
+                            k = 2
+                        }
+
+                        if (a !== 1) {
+                            break;
+                        }
+
+                    }
+                }
+                else {
+                    // document.body.removeChild(document.querySelector('#info_box1'))
+                    // document.body.removeChild(document.querySelector('#info_box2'))
+                    let fig = document.createElement('figure')
+                    fig.setAttribute('id', 'info_box2')
+                    fig.innerHTML = `<div class="card">
+            <dl>
+                <dt><span>网站url</span></dt>
+                <dd><input type="url" name="HypeLink" placeholder="填写你要跳转到的网站的链接" title="找到你要跳转的网址,复制上方链接到这里"></dd>
+
+                <dt><span>快捷导航名称</span></dt>
+                <dd><input type="text" name="LinkName" placeholder="网页显示文字"></dd>
+
+                <dt><span>提示</span></dt>
+                <dd><input type="text" name="Title" placeholder="鼠标悬浮时提示文字"></dd>
+
+                <!-- <dt> <span>图片url</span></dt>
+                <dd><input type="url" name="ImgName" placeholder="图片链接"></dd> -->
+            </dl>
+            <div style="text-align:right;margin-bottom: 5px;position: relative;right: 5px;">
+                <input type="button" value="取消">
+                <input type="button" value="确认">
+            </div>
+        </div>`
+                    let t = getElementAbsPos(target);
+                    // let t = target.clientY;     
+                    fig.setAttribute('style', `position:absolute; left:${t.left + 68}px; top:${t.top + 20}px`);
+                    document.body.appendChild(fig)
+                    let button = document.querySelectorAll('figure div[class=\'card\'] input[type=\'button\']');
+                    while (1) {
+                        let k = 1
+                        a = button[0].onclick = function () {
+                            document.body.removeChild(button[0].parentNode.parentNode.parentNode)
+                            k = 2
+                        }
+                        a = button[1].onclick = function () {
+
+                            let HypeLink = document.getElementsByName('HypeLink')[0].value;
+                            let Title = document.getElementsByName('Title')[0].value;
+                            let LinkName = document.getElementsByName('LinkName')[0].value;
+                            let a = document.createElement('a')
+                            a.setAttribute('href', HypeLink)
+                            a.setAttribute('title', LinkName)
+                            a.innerText = Title
+
+                            let li = document.createElement('li')
+                            li.append(a)
+                            target.parentNode.insertBefore(li, target)
+
+
+                            document.body.removeChild(document.querySelector('#info_box2'))
+                            k = 2
+                        }
+
+                        if (a !== 1) {
+                            break;
+                        }
+
+                    }
+                }
+            }
+        })
+
+
+
+        // 监听快捷导航哪个显示和隐藏
+        leader.addEventListener('click', function (a) {
+            //函数中参数默认为触发事件的对象
+            let leaders = document.querySelectorAll("#leader>ul>li>ul");
+            // console.log(leaders)
+            var a = a || window.event;
+            var target = a.target || a.srcElement;
+            for (let i of leaders) {
+                //点击内容必须是n个li标签其中一个 
+                if (i === target.children[0]) {
+
+                    //全部隐藏
+                    for (let i = 0; i < leaders.length; i++) {
+                        leaders[i].classList.add('display_hidden')
+
+                    }
+                    //选中的字体加粗,其余的变淡
+                    lea = document.querySelectorAll('#leader>ul>li');
+                    for (let i of lea) {
+                        i.setAttribute('style', 'font-weight:300;');
+                    }
+                    target.setAttribute('style', 'font-weight:900;');
+
+                    //去掉隐藏 
+                    target.children[0].classList.remove('display_hidden')
+                    // console.log(target.children[0].innerText)
+
+                    break;
+                }
+            }
+        })
+        //监听快捷导航显示与隐藏
+
+        // 切换搜索引擎
+        set.addEventListener('click', function (att) {
+
+            att = att || window.event;
+            var target = att.target || att.srcElement;
+            // console.log(target.id)
+            Sel(target.id);
+        }
+        )
+
+
+        function Sel(att) {
+            // console.log(1)
+
+            switch (att) {
+                case 'baidu': {
+                    localStorage.setItem('name', '1');
+
+                    Form.action = "http://www.baidu.com/baidu";
+                    s.name = 'word';
+                    s.classList.value = 'baidu';
+                    s.setAttribute('placeholder', '百度一下๑\' ͜ʖ\'๑ ​');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/baidu.svg');
+                    break;
+                }
+                case 'bilibili': {
+                    localStorage.setItem('name', '2');
+                    Form.action = "https://search.bilibili.com/all?";
+                    s.name = 'keyword';
+                    s.className = 'bilibili';
+                    s.setAttribute('placeholder', '哔哩⸂⸂⸜(രᴗര )⸝⸃⸃哔哩');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/bilibili.svg');
+
+                    break;
+                }
+                case 'Bing': {
+                    localStorage.setItem('name', '3');
+                    Form.action = "https://www.bing.com/search?";
+                    s.name = 'q';
+                    s.className = 'Bing';
+                    s.setAttribute('placeholder', '(｡•̀ᴗ-)✧Bing');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/Bing.svg');
+                    break;
+                }
+
+                case 'Google': {
+                    localStorage.setItem('name', '4');
+                    Form.action = " https://www.google.com.hk/search?";
+                    s.name = 'q';
+                    s.className = 'Google';
+                    s.setAttribute('placeholder', 'GooGle  ੭ ᐕ)੭*⁾⁾');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/guge.svg');
+                    break;
+                }
+                case 'WJ': {
+                    localStorage.setItem('name', '5');
+                    Form.action = "https://zh.wikipedia.org/w/index.php?go=%E5%89%8D%E5%BE%80";
+                    s.name = 'search';
+                    s.className = 'WJ';
+                    s.setAttribute('placeholder', '维<(￣︶￣)>基');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/wikipedia.svg');
+                    break;
+                }
+                case 'zhihu': {
+
+                    localStorage.setItem('name', 6);
+                    // window.alert(localStorage.getItem('name'))
+                    s.className = 'zhihu';
+                    Form.action = "http://www.zhihu.com/search?";
+                    s.name = 'q';
+                    s.setAttribute('placeholder', '知乎*◔.̮◔✧');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/zhihu.svg');
+                    break;
+                }
+                case 'juejin': {
+                    localStorage.setItem('name', '7');
+                    // https://juejin.cn/search?query=%E8%AF%B4%E7%9A%84&type=0
+
+                    Form.action = "https://juejin.cn/search?";
+
+                    s.name = 'query';
+                    s.className = 'juejin';
+                    s.setAttribute('placeholder', '੯‧̀͡u 掘(҂`･ｪ･´)金 <,︻╦̵̵̿╤─ ҉ - --');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/xitujuejin.svg');
+                    break;
+                }
+                case 'GH': {
+                    localStorage.setItem('name', '8');
+                    // https://juejin.cn/search?query=%E8%AF%B4%E7%9A%84&type=0
+
+                    Form.action = "https://github.com/search?";
+
+                    s.name = 'q';
+                    s.className = 'GH';
+                    s.setAttribute('placeholder', '༼ つ ◕‿◕ ༽つGitHub');
+                    img.setAttribute('style', 'background-image: url(./img/icon_frgyqursaiu/github.svg');
+                    break;
+                }
+            }
+        }
+        if (localStorage.getItem("name")) {
+            switch (localStorage.getItem('name')) {
+                case '1': {
+                    Sel('baidu')
+                    break;
+                }
+                case '2': {
+                    Sel('bilibili')
+                    break;
+                }
+                case '3': {
+                    Sel('Bing')
+                    break;
+                }
+                case '4': {
+                    Sel('Google')
+                    break;
+                }
+                case '5': {
+                    Sel('WJ')
+                    break;
+                }
+                case '6': {
+                    Sel('zhihu')
+                    break;
+                }
+                case '7': {
+                    Sel('juejin')
+                    break;
+                }
+                case '8': {
+                    Sel('GH')
+                    break;
+                }
+
+            }
+        }
+        // 切换搜索引擎
+
+        //箭头函数不能构造函数,只能创建匿名函数
+        // COOL = function (CO) {
+        //     console.log("Hi")
+
+        // }
+        // set.addEventListener("click", COOL());
+        //监听广告栏
+        let flag = 0;
+        Menu.addEventListener('click', function (a) {
+
+            let page_height = document.documentElement.scrollHeight;
+            // console.log(page_height);
+            if (flag === 0) {
+                Menu.style.backgroundColor = 'rgb(128, 154, 154)';
+                flag = 1;
+                Me.setAttribute('style', `height:${page_height}px`);
+                // Me.appendChild(Menu);
+                M_add();
+            }
+            else {
+                flag = 0;
+                Menu.style.backgroundColor = 'rgba(150, 169, 240,0)';
+                Me.setAttribute('style', `height:auto`);
+                // document.documentElement.appendChild(Menu);
+                M_remove();
+            }
+        })
+
+        function M_add() {
+            Me.classList.add('scal');
+            Menu_ori.classList.remove('display_none');
+        }
+        function M_remove() {
+            Menu_ori.classList.add('display_none');
+            Me.classList.remove('scal');
+        }
+        //监听广告栏
+
+
+        // 页面加载完成后给每个ul添加li
+        onload = function () {
+            let mod1 = document.querySelectorAll('#leader ul')
+            // console.log(mod1)
+            for (let count = 0; count < mod1.length; count++) {
+                let U = document.createElement('li')
+                U.innerText = '+'
+                U.classList.add('flag')
+                mod1[count].appendChild(U)
+            }
+        }
+
+        function getElementAbsPos(tar) {
+            var t = tar.offsetTop;
+            var l = tar.offsetLeft;
+            while (tar = tar.offsetParent) {
+                t = t + tar.offsetTop;
+                l = l + tar.offsetLeft;
+            }
+            return {
+                left: l, top: t
+            }
+        }
+    </script>
+</body>
+
+</html>

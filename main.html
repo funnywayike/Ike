@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            background: #ccc;
+            width: 100%;
+            height: 396.5px;
+            align-items: stretch;
+            justify-content: space-evenly;
+        }
+    </style>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        html body {
+            width: 100%;
+            height: 1800px;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .lead {
+
+            height: 50px;
+            width: 100%;
+            margin-top: 10px;
+            background-color: bisque;
+        }
+
+        .logo {
+            width: 38%;
+            float: left;
+            clear: both;
+            background-color: aquamarine;
+
+        }
+
+        .leads {
+            width: 62%;
+            float: right;
+            clear: both;
+            /* background-color: blueviolet; */
+
+        }
+
+        .alignItems {
+            align-items: flex-end;
+        }
+
+        .title {
+            margin: 2px;
+            width: 12%;
+            padding: 1px 2px;
+            height: 30%;
+            text-align: center;
+            line-height: 100%;
+            border-radius: 20% 10%;
+            background-color: rgb(37, 75, 161);
+        }
+
+        
+.buttonClass {
+    text-align:center;
+    line-height: 100%;
+    height: 100%;
+    text-decoration: none;
+    display: block;
+  font-size:15px;
+  font-family:Trebuchet MS;
+  width:100%;
+  height:100%;
+  border-width:0px;
+  color:#fff;
+  border-color:#84bbf3;
+  font-weight:bold;
+  font-style:italic;
+  border-top-left-radius:8px;
+  border-top-right-radius:8px;
+  border-bottom-left-radius:8px;
+  border-bottom-right-radius:8px;
+  box-shadow:inset -2px 10px 10px -17px #dcecfb;
+  text-shadow:inset 0px 1px 0px #528ecc;
+  background:linear-gradient(#bddbfa, #80b5ea);
+}
+
+.buttonClass:hover {
+  background: linear-gradient(#80b5ea, #bddbfa);
+}
+              
+        .CB {
+            justify-content: space-between;
+        }
+
+        .CA {
+            justify-content: space-around;
+        }
+
+
+
+
+        .str {
+            padding-bottom: 100%;
+            background-color: rgb(#33495d);
+            padding-right: 100%;
+
+        }
+
+        .clear {
+            clear: both;
+        }
+
+        .adv {
+            margin-top: 5px;
+            width: 100%;
+            height: 200px;
+            background-color: rgb(45, 172, 204);
+        }
+
+        .PA {
+            position: absolute;
+        }
+
+        .PR {
+            position: relative;
+        }
+
+        .adv0 {
+            width: 200px;
+            height: 100%;
+            background-color: rgb(116, 19, 19);
+            right: 20px;
+        }
+
+        .stl {
+            /* padding-bottom: 10px;
+            padding-left: 0px;
+            padding-right: 10px;
+            padding-top: 0px; */
+            border-left: 50px;
+            border-top: 50px;
+
+            background-color: black;
+
+        }
+
+        /* 场景导航*/
+        #layout {
+            width: 100%;
+            height: 70%;
+            background-color: #751a75;
+            align-items: flex-end;
+            justify-content: space-evenly;
+        }
+
+        .labox {
+            border-radius: 50%;
+            background-color: coral;
+            margin: 5px;
+            /* flex-direction: column; */
+            width: 60px;
+            height: 60px;
+            background-color: darkred;
+        }
+
+        #Laout {
+            height: 150px;
+            background-color: rgb(219, 233, 233);
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .LTitle {
+            width: 100%;
+            height: 30%;
+            background-color: #8a9baa;
+        }
+
+        .inf {
+            width: 100%;
+            height: 400px;
+        }
+
+        .LBox {
+            width: 48%;
+            height: 48%;
+            background-color: antiquewhite;
+        }
+
+        .cul {
+            width: 18%;
+            height: 100%;
+            /* background-color: #751a75; */
+        }
+
+        .cul>div:nth-child(1) {
+            height: 80%;
+            background-color: aliceblue;
+        }
+
+        .cul>div:nth-child(2) {
+            height: 20%;
+            background-color: #33495d;
+        }
+
+        .liuyanban {
+            width: 100%;
+            height: 396.5px;
+            background:linear-gradient(45deg,rgb(233, 209, 213) 50%,rgb(159, 159, 206) 100%)
+        }
+
+        .le {
+            width: 12%;
+            height: 40px;
+            /* background-color: coral; */
+            margin-top: 10px;
+        }
+
+        .touxiang {
+            width: 8%;
+            height: 100%;
+            background-color: #751a75;
+            border-radius: 50%;
+        }
+    </style>
+
+</head>
+
+<body class="PR">
+    <div class="flex lead">
+        <div class="logo">毕云霄</div>
+
+
+        <div class="flex alignItems leads CA">
+            <div class="title">首页</div>
+            <div class="title">博客</div>
+            <div class="title">岛屿</div>
+            <div class="title">积分</div>
+            <div class="title">会员中心</div>
+            <div class="touxiang" style="overflow: hidden;" align="center"><img
+                    src="./img/katong/cute_image/24ffb2112c965b97f6a6ba3239d1da5.jpg" alt="" width="100%" height="100%">
+            </div>
+
+        </div>
+    </div>
+
+    <div class="adv flex PR">
+
+        <div class="adv0 PA">
+            <div class="stl"></div>
+            <div class="str">2</div>
+        </div>
+
+    </div>
+
+    <div id="Laout" class="flex ">
+        <div class="LTitle">
+            <span>图文导航栏</span>
+        </div>
+        <div class="flex" id="layout">
+            <div>
+                <div class="labox">
+        
+                </div>
+                <div align="center">@.@</div>
+            </div>
+            <div>
+                <div class="labox"></div>
+                <div align="center">O_O</div>
+            </div>
+            <div>
+                <div class="labox"></div>
+                <div align="center">%o%</div>
+            </div>
+            <div>
+                <div class="labox"></div>
+                <div align="center"> ->0>- </div>
+            </div>
+            <div>
+                <div class="labox"></div>
+                <div align="center">KOK</div>
+            </div>
+            <div>
+                <div class="labox"></div>
+                <div align="center">(oOo)</div>
+            </div>
+
+        </div>
+    </div>
+    <div style=""> <span> 每日元岛</span> </div>
+
+    <div class="wrapper flex">
+
+        <div class="flex"
+            style="flex-wrap: wrap;align-content: space-around; width: 48%; height: 100%;background-color: #9824c3;">
+            <div style="width: 100%;height: 48%;background-color: brown;">1</div>
+            <div style="width: 100%;height: 48%;background-color: brown;">2</div>
+        </div>
+
+        <div class="flex "
+            style="flex-wrap: wrap;justify-content: space-around;align-content: space-around; width: 48%;height: 100%;background-color: crimson;">
+            <div class="LBox"> 1</div>
+            <div class="LBox"> 2</div>
+            <div class="LBox"> 3</div>
+            <div class="LBox"> 4</div>
+        </div>
+
+    </div>
+    <div><span>元岛文化</span></div>
+    <div class="flex" style="justify-content: space-around;width: 100%;height:198px;">
+        <div class="cul">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="cul">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="cul">
+            <div></div>
+            <div></div>
+        </div>
+        <div class="cul">
+            <div></div>
+            <div></div>
+        </div>
+
+
+    </div>
+
+    <div> <span>元文元语</span></div>
+    <div class="liuyanban"> </div>
+    <footer class="">
+        <div><span>快捷导航</span></div>
+
+        <div style="height:auto;width: 100%;flex-direction:row;flex-wrap: wrap;align-content: space-between;background-color:#751a75"
+            class="flex">
+
+            <div class="flex"
+                style="flex-wrap: wrap;justify-content: space-around;height: 80%;width: 100%;background-color: rgb(183, 205, 205);">
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+                <div class="le"><a href="#" class="buttonClass">Button text</a></div>
+               
+             
+              
+               
+
+            </div>
+
+
+        </div>
+    </footer>
+    <div class="PA" align="center" style="bottom:0px;height: 20px; width: 100%; background-color: #751a75;">
+        <span>备案号</span>
+    </div>
+</body>
+
+</html>

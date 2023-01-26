@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<!-- 上方这个是定义文档类型 -->
+下方这个定义这个网页写的主要内容是中文
+<html lang="zh">
+<!-- 头 -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 内容宽度等于设备宽度 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 为文档定义一个标题title -->
+    <title>MetaIsle</title>
+    <style>
+        body {
+            column-count: 3;
+            column-fill: auto;
+            break-inside: avoid;
+
+        }
+    </style>
+</head>
+<!-- 身体 -->
+<wbr>
+<h1 style="text-align: center;">标签认识</h1>
+<!-- 超链接 href写要跳转的地方,常用来跳转页面 #+id名称为描点,可以在页面内进行跳转 -->
+<br> <!-- #折行 -->
+<hr> <!-- 水平线-->
+
+
+
+<!-- 下边俩html5支持abbr  缩写-->
+<acronym title="HH">haha</acronym>
+<abbr title="Meta Isla">MI</abbr>的中文是元岛
+<big>定义大号字体</big>
+<blockquote cite="http://www.worldwildlife.org/who/index/html">For 50 years,Lorem, ipsum dolor sit amet consectetur
+    adipisicing elit. Quibusdam dicta quidem consectetur nesciunt laud</blockquote>
+<!-- 标签定义摘自另一个源的块引用
+浏览器通常会对 blockquote元素进行缩进 
+如果标记不需要段落分割的短引用,用q标签 -->
+
+<!-- address标签定义文档作者的练习信息 -->
+<!-- 提示：不应该使用 <address> 标签来描述邮政地址，除非这些信息是联系信息的组成部分。
+提示：<address> 元素通常被包含在 <footer> 元素的其他信息中。 -->
+<address>
+    Written by <a href="mailto:webmaster@example.com">Jon Doe</a>.<br>
+    <u>Visit us at</u>:<br>
+    <i>Example.com</i><br>
+    <strong>Box 564, Disneyland</strong><br>
+    <b> USA</b>
+</address>
+<bdi>你好</bdi>
+<li>用户 <bdi>hrefs</bdi>: 60 分</li>
+<li>用户 <bdi>jdoe</bdi>: 80 分</li>
+<li>用户 <bdi>إيان</bdi>: 90 分</li>
+<bdo dir="rtl">从右向左</bdo>
+<bdo dir="ltr">从左向右</bdo>
+<em>强调文本</em><br>
+<strong>加粗文本</strong><br>
+<dfn>定义项目</dfn><br>
+<code>一段电脑代码 print("Hello World")</code><br>
+<samp>计算机样本</samp><br>
+<kbd>键盘输入</kbd><br>
+<var>变量</var>
+<mark>标记标签</mark>
+<!-- 下边metar中value为给定值,min为最小值,max为最大值,网页会显示0~9进度条,可以用来做网页加载的进度条 -->
+<meter value="9" min="0" max="10"></meter><br>
+<!-- 默认min=0,max=1 -->
+<meter value="0.6">60%</meter>
+<!-- 这个和mete有异曲同工之妙 ,这个是HTML5标签-->
+<progress value="35" max="100"></progress>
+<pre>这里是预格式文本标签,   在这里写的空格 和换行都会被浏览器识别</pre>
+<progress></progress>
+
+<ruby>
+    漢 <rp>(</rp>
+    <rt>han</rt>
+    <rp>)</rp>
+    字 <rp>(</rp>
+    <rt>zi</rt>
+    <rp>)</rp>
+</ruby>
+<sub>定义下标</sub>
+<sup>定义上标</sup>
+<!-- 语义化标签 -->
+<time></time>
+<u>这是下划线</u>
+<wbr>HTTP</wbr>Request当设备到HTTP..需要换行的时候,浏览器会明白要在HTTP之后进行换行
+<!-- 表单 -->
+<form action="">
+    <input type="text">
+    <textarea name="" id="" cols="30" rows="10">在这里输入评论</textarea>
+    <button>这是按钮,通过JS来做功能</button>
+    <select name="" id="">
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+    <lable for="id">定义input元素的标注</lable>
+    <fieldset>定义围绕表单中元素的边框</fieldset>
+    <legend>定义fieldset元素的标题</legend>
+    <datalist>规定input元素可能的选项列表,如拼多多搜索框</datalist>
+    <input list="browsers" name="browser">
+    <datalist id="browsers">
+        <option value="Internet Explorer">
+        <option value="Firefox">
+        <option value="Chrome">
+        <option value="Opera">
+        <option value="Safari">
+    </datalist>
+    <keygen>规定用于表单的密钥对生成器字段</keygen>
+
+    <!-- 将计算结果显示在<output>元素中 -->
+    <!-- 属性 for: element_id 描述计算中使用元素与计算结果之间的关系 form:form_id  定义输入字段所属的一个或多个表单   name 定义对象的唯一名称  -->
+
+    <input type="range" id="a" value="50">100
+    +<input type="number" id="b" value="50">
+    =<output name="x" for="a b"></output>
+
+    <iframe src="" frameborder="0"></iframe>
+    <!-- 无序列表 -->
+    <ul>
+        <li></li>
+        <!-- 有序列表 -->
+        <ol></ol>
+
+    </ul>
+    <!-- 自定义列表 -->
+    <dl>
+        <dt></dt>
+        <dd></dd>
+    </dl>
+</form>
+
+<img src="./1.jpg" alt="" usemap="#map的名字">
+<map name="map的名字">
+    <area shape="rect,poly,circle" coords="rect 对应左上角和右下角 圆则是圆心坐标和半径  poly则是多边形,即多个坐标,最后一个坐标应该形成闭合" href="跳转到的页面"
+        alt="">
+
+</map>
+<script>
+    <canvas id="myCanvas">你的浏览器不支持 HTML5 canvas 标签。</canvas>
+    var c = document.getElementById('myCanvas');
+    var ctx = c.getContext('2d');
+    ctx.fillStyle = '#FF0000';
+    ctx.fillRect(0, 0, 20, 100);
+</script>
+
+<figure>
+    <figcaption>Cute_university_first</figcaption>
+    <img src="./1.jpg" alt="1" width="100%">
+</figure>
+
+<audio controls>
+    <!-- <source src="../夏说英文/Facebook股价飙升（暴虐朗读版1）｜E0801.mp3"> -->
+    <source src="../夏说英文/Pokeman Go（暴虐朗读版1）｜E0718.mp3">
+    这个浏览器不支持audio
+</audio>
+<video controls width=100% "
+       src=" ./audio/friday.mp4">
+    <!-- 其中track为字幕文件 -->
+    <!-- <track default
+           kind="captions"
+           srclang="en"
+           src="/video/php/friday.vtt" /> -->
+    抱歉，您的浏览器不支持嵌入视频！
+</video>
+<base href="">
+<!-- base标签规定页面中所有相对链接的基准URL和target 跳转方式  放在head里边-->
+
+<details>
+    <!-- summary为details可见的标题summary应该是details元素的第一个子元素 -->
+    <summary>三体系列影视作品</summary>
+
+    <details>
+        <summary>作品渠道</summary>
+
+        <ul>
+            <li>三体爱好者的我的三体</li>
+            <li>腾讯的三体</li>
+            <li>开天异化的三体</li>
+            <li>NetFlex的三体</li>
+        </ul>
+
+    </details>
+
+    <details>
+        <summary>推荐度</summary>
+
+        <ul>
+            <ul>三体爱好者的我的三体</ul>
+            <ul>腾讯的三体</ul>
+            <ul>开天异化的三体</ui>
+                <ul>NetFlex的三体</ul>
+            </ul>
+
+    </details>
+
+</details>
+<div>我无敌</div>
+</body>
+
+</html>
