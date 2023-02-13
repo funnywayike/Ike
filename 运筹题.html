@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            user-select: none;
+        }
+
+        #question section div>div {
+            width: 100%;
+            height: 500px;
+        }
+
+        #question section div>div:nth-child(1) {
+
+            /* background-color: blueviolet; */
+        }
+
+        #question section div>div:nth-child(2) {
+
+            background-color: rgb(109, 179, 47);
+        }
+
+        #question section div>div:nth-child(3) {
+
+            background-color: rgb(209, 33, 142);
+        }
+
+        #question section div>div:nth-child(4) {
+
+            background-color: rgb(38, 203, 157);
+        }
+
+        #question section div>div:nth-child(5) {
+
+            background-color: rgb(173, 203, 50);
+        }
+
+        #question section div>div:nth-child(6) {
+
+            background-color: rgb(198, 135, 69);
+        }
+
+        header div:nth-child(2) {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+
+        }
+
+        header div:nth-child(2) a {
+            min-width: 150px;
+            width: auto;
+            background-color: rgba(255, 255, 254, 0.12);
+            margin: 5px;
+            text-align: center;
+        }
+
+        header div:nth-child(2)>a {
+            text-decoration: none;
+            color: black;
+
+            /* padding: 5px; */
+            /* background: rgb(130, 189, 210); */
+
+
+
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        header div:nth-child(2) a:hover {
+            font-weight: 900;
+        }
+
+        #question {
+            box-sizing: border-box;
+            margin: 20px;
+            padding: 30px;
+            background-color: rgb(117, 208, 211);
+            /* height: 100px; */
+            text-align: center;
+
+        }
+
+        #question section {
+            max-width: 800px;
+            width: 100%;
+            /* width: auto; */
+            background-color: aliceblue;
+            height: 500px;
+            overflow-x: auto;
+            margin: 0 auto;
+        }
+
+        #question section>div {}
+
+        #question section::-webkit-scrollbar {
+            /* background-color: aliceblue; */
+
+            width: 0 !important;
+            display: none;
+            scrollbar-width: none;
+            -ms-overflow-style: none;
+
+        }
+
+        ol>li {
+            /* list-style-type: lower-greek; */
+            position: relative;
+            left: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div>
+            <center>
+                <h1>operations research examples</h1>
+            </center>
+        </div>
+        <div>
+            <a href="#1">对偶问题转换</a>
+            <a href="#2">指派问题</a>
+            <a href="#3">最大流</a>
+            <a href="#4">化标准型</a>
+            <a href="#5">单纯型法求原问题</a>
+            <a href="#6">对偶问题最优解</a>
+            <a href="#7">敏感度分析</a>
+            <a href="#8">动态分析</a>
+            <a href="#9">网络计划图</a>
+            <a href="#10">时间参数</a>
+
+
+
+        </div>
+    </header>
+    <div id="question">
+        <section>
+            <div>
+                <div id="1">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/1.png" alt="" width="100%" height="88%">
+                        <figcaption>对偶问题的转换规则</figcaption>
+
+                    </figure>
+                </div>
+                <div id="2">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/2.png" alt="" width="100%" height="88%">
+                        <figcaption>指派问题解题思路</figcaption>
+
+                    </figure>
+                </div>
+                <div id="3">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/3.png" alt="" width="100%" height="88%">
+                        <figcaption>最大流求解步骤</figcaption>
+
+                    </figure>
+                </div>
+                <div id="4">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/4.png" alt="" width="100%" height="88%">
+                        <figcaption>化标准型</figcaption>
+
+                    </figure>
+                </div>
+                <div id="5">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/5.png" alt="" width="100%" height="88%">
+                        <figcaption>单纯刑法</figcaption>
+                    </figure>
+                </div>
+                <div id="6">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/6.png" alt="" width="100%" height="88%">
+                        <figcaption>对偶问题最优解</figcaption>
+                    </figure>
+                </div>
+                <div id="7">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/7.png" alt="" width="100%" height="88%">
+                        <figcaption>敏感度分析</figcaption>
+                    </figure>
+                </div>
+                <div id="8">
+                    <figure style="width: 100%;height: 100%;">
+                        <section>
+                            <p>
+                                <center>五要素建模</center>
+                            <ol type="1" style="text-align: left;">
+                                <li>阶段:k=1,2,3..</li>
+                                <li>状态S<sub>k</sub>:第k阶段的剩余资源,可用于当前阶段项目或其他后续项目</li>
+                                <li>决策X<sub>k</sub>:第k阶段,用于投入生产或使用的资源</li>
+                                <li>状态转移:将上一阶段资源可用量用当前资源可用量进行表示</li>
+                                <li>基本方程:该方程表示累计到该阶段资源的情况</li>
+                            </ol>
+                            <a href="./res/yun_chou_xve/07 动态规划.pptx">该节课件</a>
+                            </p>
+                        </section>
+                        <figcaption>动态分析 *建模要熟练</figcaption>
+                    </figure>
+                </div>
+                <div id="9">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/8.png" alt="" width="100%" height="88%">
+                        <figcaption>网络计划图绘制</figcaption>
+                    </figure>
+                </div>
+                <div id="10">
+                    <figure style="width: 100%;height: 100%;">
+                        <img src="./img/yunchou/9.png" alt="" width="100%" height="88%">
+                        <figcaption>计算该节点时间参数(最早完工和最晚完工时间) 最早和最晚完工时间相等的节点路线为关键路径</figcaption>
+                    </figure>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <script>
+    //     onresize = function () {
+    //         let goal = document.querySelector('#question section');
+    //         console.log(window.getComputedStyle(goal).width)
+    //     }
+
+
+    // </script>
+</body>
+
+</html>
