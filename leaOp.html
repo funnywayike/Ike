@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>运筹学</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .layout1 {
+            border: 5px #8da3b4d0;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        .column {
+            flex-direction: column;
+        }
+
+        h3 {
+            max-width: 500px;
+            margin-left: 2rem;
+            text-indent: 2rem;
+        }
+
+        h2 {
+            margin-top: 20px;
+            user-select: none;
+        }
+
+        h1 {
+            user-select: none
+        }
+
+        #content {
+            min-height: 2000px;
+
+
+        }
+
+        #content>div {
+            width: 200px;
+            background-color: aliceblue;
+            user-select: none;
+        }
+
+
+
+        #content figure {
+            position: sticky;
+            left: 0px;
+            top: 50px;
+            background-color: rgb(79, 169, 169);
+            color: azure;
+        }
+
+        header {
+
+            margin-bottom: 38px;
+            border: 2px gainsboro;
+            padding: 10px;
+            box-shadow: black 1px 1px 1px;
+        }
+
+        main {
+            padding-left: 50px;
+            min-width: 300px;
+            max-width: 600px;
+            background-color: azure;
+            padding-right: 60px;
+        }
+
+        #leader>span {
+            display: block;
+            margin: 10px;
+        }
+
+        @media(prefers-reduced-motion:no-preference) {
+            * {
+                scroll-behavior: smooth;
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+
+        #logo {
+            text-align: center;
+        }
+
+        footer {
+            position: sticky;
+            bottom: 0px;
+        }
+
+        .flex1 {
+            flex: 1;
+        }
+
+        .flag,
+        .niu {
+            display: none;
+        }
+
+        @media screen and (orientation:portrait) {
+            section>div:nth-child(1) {
+                display: none;
+            }
+
+            main {
+                display: none;
+            }
+
+            .flag {
+                display: block;
+                position: absolute;
+                right: 0px;
+                top: 0px;
+                color: red;
+                font-weight: 900;
+            }
+
+            .flag:visited {
+                display: none;
+            }
+        }
+
+        @media screen and (orientation:landscape) and (max-width:1073px) {
+            section>div:nth-child(1) {
+                display: none;
+            }
+
+            main {
+                display: none;
+            }
+
+
+        }
+
+        @media screen and (orientation:landscape) and (max-width:1400px) and (min-width:1074px) {
+            section>div:nth-child(1) {
+                display: none;
+            }
+
+
+
+
+        }
+
+        @media screen and (min-width:5000px) {
+            * {
+                display: none;
+            }
+
+            .niu {
+                display: block !important;
+                font: 900px;
+                color: black;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <figure class="flag">提示:竖屏内容显示不全! 点击可关闭提示</figure>
+    <header>
+        <center>
+            <h1>operations research</h1>
+        </center>
+    </header>
+    <section id="content" class="flex">
+        <div>
+            <div id="logo">
+                <figure>
+                    <img src="./img/cute_image/1.jpg" alt="">
+                    <figcaption>✧✧✧考神附体✧✧✧</figcaption>
+
+                </figure>
+            </div>
+
+            <figure>
+
+                <div id="leader">
+                    <span><a href="#one">(一)、简答题</a></span>
+                    <span><a href="#two">(二)、敏感度分析</a></span>
+                    <span><a href="#three">(三)、动态编程</a></span>
+                    <span><a href="#four">(四)、网络计划</a></span>
+                </div>
+            </figure>
+            <footer>
+                <a href="./res.html">参考资料</a>
+            </footer>
+        </div>
+
+        <main id="main">
+            <div id="one">
+                <h2>(Ⅰ)、Short answer (30 points)</h2>
+                <h3>1.Write the dual problem(10)</h3>
+                <h3>2.Solving assignment problems(10)</h3>
+                <h3>3.Solving the maximum flow problem</h3>
+            </div>
+
+            <div id="two">
+                <h2>(Ⅱ)、Sensitivity analysis (30 points)</h2>
+                <h3>1.write the optimal solution of the primal(dual) problem</h3>
+                <h3>2.The right term coefficient b1,if b1 increases by 1,how much does the objective function Z
+                    increase.</h3>
+                <h3>3.If the optimal solution remains unchanged,what is the range of the value coefficient b1?</h3>
+            </div>
+
+            <div id="three">
+                <h2>(Ⅲ)、Dynamic programming (20 points)</h2>
+                <h3>1. five elements create model (12)</h3>
+                <h3>2.get the answer (8)</h3>
+            </div>
+            <div id="four">
+                <h2>(Ⅳ)、Network plan(20 points)</h2>
+                <h3>1.Draw the network 双代号网络图</h3>
+                <h3>2.Computer the network time,and determine the critical route. 图上计算时间参数,最后写明总工期、关键路径.</h3>
+            </div>
+
+        </main>
+
+        <section id="pic" class="flex1" style="background-color:azure">
+            <iframe src="./运筹题.html" frameborder="0" width="100%" height="900px "
+                style="position: sticky; top: 0;"></iframe>
+
+        </section>
+
+    </section>
+    <script>
+        let bot = document.querySelector('figure[class=\'flag\']');
+        bot.onclick = function () {
+            bot.style.display = 'none';
+        }
+
+    </script>
+</body>
+
+</html>
