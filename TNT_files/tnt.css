@@ -1,0 +1,40 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: azure;
+
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 80%;
+    height: auto;
+    background-color: antiquewhite;
+}
+
+section>div {
+    margin-bottom: 10px;
+    width: 23%;
+    background-color: lavender;
+    height: 300px;
+}
+
+td>input {
+    width: 100%;
+}
+
+table {
+    text-align: left;
+}
+
+caption {
+    font-weight: 900;
+    font-size: larger;
+
+}
